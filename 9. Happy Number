@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isHappy(int n) {
+        String s = Integer.toString(n);
+        while(s.length() > 1){
+            int sum = 0;
+            for(int i=0; i<s.length(); i++){
+                int val = s.charAt(i) - '0';
+                
+                sum = sum + (val*val);
+            }
+            
+            s= Integer.toString(sum);
+        }
+        
+        if(s.equals("1") || s.equals("7"))
+            return true;
+        else
+            return false;
+    }
+}
